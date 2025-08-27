@@ -1,5 +1,4 @@
 import { useState } from "react";
-<<<<<<< HEAD
 //ست نوتس اینجا همون ست نوتس پدرشه
 function AddNewNote({onAddNote}){
 //1-برای ساختن یک کنترل المنت باید استیت مخصوص به اون رو بسازیم
@@ -8,14 +7,6 @@ function AddNewNote({onAddNote}){
     const [description,setDescription]=useState("");
 
     
-=======
-import { useNotesDispatch } from "../context/NotesContext";
-
-function AddNewNote() {
-  const dispatch = useNotesDispatch();
-  const [title, setTtile] = useState("");
-  const [description, setDescription] = useState("");
->>>>>>> 9c64cdf88bf4fd03fdde97db902d37645cc64b30
 
     const handleSubmit = (e)=>{
      //مشخصات ایونت رو داخل فانکشن هندل سابمیت میفرسته
@@ -40,13 +31,6 @@ function AddNewNote() {
         
 
     };
-<<<<<<< HEAD
-=======
-    dispatch({ type: "add", payload: newNote });
-    setTtile("");
-    setDescription("");
-  };
->>>>>>> 9c64cdf88bf4fd03fdde97db902d37645cc64b30
 
     const handleChange = (e)=>{
         // console.log(e.target.value)

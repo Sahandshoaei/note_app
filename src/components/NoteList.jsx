@@ -1,19 +1,5 @@
-<<<<<<< HEAD
-=======
-import { useNotes, useNotesDispatch } from "../context/NotesContext";
-
-function NoteList({ sortBy }) {
-  const notes = useNotes();
-
-  let sortedNotes = notes;
-  if (sortBy === "earliest")
-    sortedNotes = [...notes].sort(
-      (a, b) => new Date(a.createdAt) - new Date(b.createdAt)
-    ); // a -b  => a > b ? 1 : -1
->>>>>>> 9c64cdf88bf4fd03fdde97db902d37645cc64b30
 
 
-<<<<<<< HEAD
 function NoteList({notes , onDelete , onCompleted}){
     return(
         <div className="note-list">
@@ -27,25 +13,10 @@ function NoteList({notes , onDelete , onCompleted}){
         </div>
     )
     
-=======
-  if (sortBy === "completed")
-    sortedNotes = [...notes].sort(
-      (a, b) => Number(a.completed) - Number(b.completed)
-    );
-
-  return (
-    <div className="note-list">
-      {sortedNotes.map((note) => (
-        <NoteItem key={note.id} note={note} />
-      ))}
-    </div>
-  );
->>>>>>> 9c64cdf88bf4fd03fdde97db902d37645cc64b30
 }
 
 export default NoteList;
 
-<<<<<<< HEAD
 function NoteItem({note , onDelete , onCompleted}){
 
     const options = {
@@ -80,47 +51,10 @@ function NoteItem({note , onDelete , onCompleted}){
             <div className="note-item__footer">
                 {new Date(note.createdAt).toLocaleDateString("en-US",options)}
             </div>
-=======
-function NoteItem({ note }) {
-  const dispatch = useNotesDispatch();
-
-  const options = {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  };
->>>>>>> 9c64cdf88bf4fd03fdde97db902d37645cc64b30
 
         </div>
-<<<<<<< HEAD
     )
     
-=======
-        <div className="actions">
-          <button
-            onClick={() => dispatch({ type: "delete", payload: note.id })}
-          >
-            ❌
-          </button>
-          <input
-            type="checkbox"
-            name={note.id}
-            id={note.id}
-            value={note.id}
-            checked={note.completed}
-            onChange={(e) => {
-              const noteId = Number(e.target.value);
-              dispatch({ type: "complete", payload: noteId });
-            }}
-          />
-        </div>
-      </div>
-      <p className="note-item__footer">
-        {new Date(note.createdAt).toLocaleDateString("en-US", options)}
-      </p>
-    </div>
-  );
->>>>>>> 9c64cdf88bf4fd03fdde97db902d37645cc64b30
 }
 
 

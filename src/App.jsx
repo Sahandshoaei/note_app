@@ -4,7 +4,6 @@ import AddNewNote from "./components/AddNewNote";
 import NoteList from "./components/NoteList";
 import NoteStatus from "./components/NoteStatus";
 import NoteHeader from "./components/NoteHeader";
-<<<<<<< HEAD
 import { act } from "react";
 
 function notesReducer (state , action){
@@ -137,26 +136,6 @@ if (sortBy=="completed") sortedNotes = [...notes].sort(
     
   )
 
-=======
-import { NotesProvider } from "./context/NotesContext";
-
-function App() {
-  const [sortBy, setSortBy] = useState("latest");
-  return (
-    <NotesProvider>
-      <div className="container">
-        <NoteHeader sortBy={sortBy} onSort={(e) => setSortBy(e.target.value)} />
-        <div className="note-app">
-          <AddNewNote />
-          <div className="note-container">
-            <NoteStatus />
-            <NoteList sortBy={sortBy} />
-          </div>
-        </div>
-      </div>
-    </NotesProvider>
-  );
->>>>>>> 9c64cdf88bf4fd03fdde97db902d37645cc64b30
 }
 
 export default App;
